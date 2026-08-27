@@ -1,7 +1,7 @@
 # Agent App
 
-A minimal AI agent: it receives a message over HTTP, forwards it to a
-[LiteLLM](https://docs.litellm.ai/) gateway, and returns the model's answer along
+A minimal AI agent: it receives a message over HTTP, forwards it to an
+OpenAI-compatible gateway, and returns the model's answer along
 with the name of the instance that served it.
 
 Workshop material for *Kubernetes & Agents IA* (CNCG Lomé).
@@ -25,14 +25,14 @@ Everything comes from the environment. See `.env.example`.
 | Variable        | Required | Description                                        |
 |-----------------|----------|----------------------------------------------------|
 | `LLM_BASE_URL`  | yes      | Gateway base URL, incl. `/v1`. Workshop: `https://r7umxvllm.denisakp.me/v1` |
-| `LLM_API_KEY`   | yes      | LiteLLM virtual key (`sk-...`). Never commit it.    |
+| `LLM_API_KEY`   | yes      | Gateway virtual key (`sk-...`). Never commit it.    |
 | `LLM_MODEL`     | no       | Model alias exposed by the gateway (`groq-120b`)    |
 
 The application refuses to start if `LLM_BASE_URL` or `LLM_API_KEY` is missing.
 No gateway URL is baked into the image or the code — it is always read from the
 environment, so you can point the same image at any OpenAI-compatible gateway.
 
-### Pointing at a local LiteLLM
+### Pointing at a local gateway
 
 The hostname to use depends on where the *app* runs, not where the gateway runs:
 
