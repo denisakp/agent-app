@@ -5,4 +5,4 @@ metadata:
   name: agent-config
 data:
   LLM_BASE_URL: "https://r7umxvllm.denisakp.me/v1"
-  LLM_MODEL: "chat"
+  LLM_MODEL: "groq-120b"
