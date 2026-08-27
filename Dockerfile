@@ -25,4 +25,4 @@ EXPOSE 8000
 
 # No configuration is baked in: LLM_BASE_URL, LLM_API_KEY and LLM_MODEL are
 # passed at runtime.
-CMD ["fastapi", "run", "main.py", "--port", "8000"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

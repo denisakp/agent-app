@@ -22,7 +22,7 @@ class Settings(BaseSettings):
         description="LiteLLM virtual key. Required: the app refuses to start without it.",
     )
     llm_model: str = Field(
-        default="default",
+        default="chat",
         description="Model alias exposed by the gateway.",
     )
     request_timeout: float = Field(

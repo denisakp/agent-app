@@ -26,7 +26,7 @@ Everything comes from the environment. See `.env.example`.
 |-----------------|----------|----------------------------------------------------|
 | `LLM_BASE_URL`  | yes      | Gateway base URL, incl. `/v1`. Workshop: `https://r7umxvllm.denisakp.me/v1` |
 | `LLM_API_KEY`   | yes      | LiteLLM virtual key (`sk-...`). Never commit it.    |
-| `LLM_MODEL`     | no       | Model alias exposed by the gateway (`default`)      |
+| `LLM_MODEL`     | no       | Model alias exposed by the gateway (`chat`)         |
 
 The application refuses to start if `LLM_BASE_URL` or `LLM_API_KEY` is missing.
 No gateway URL is baked into the image or the code — it is always read from the
@@ -63,7 +63,7 @@ No build needed — the image is public on GHCR:
 docker run -p 8000:8000 \
   -e LLM_BASE_URL=https://r7umxvllm.denisakp.me/v1 \
   -e LLM_API_KEY=sk-your-virtual-key \
-  -e LLM_MODEL=default \
+  -e LLM_MODEL=chat \
   ghcr.io/denisakp/agent-app:latest
 ```
 
